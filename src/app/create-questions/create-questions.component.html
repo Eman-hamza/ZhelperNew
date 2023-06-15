@@ -1,0 +1,100 @@
+<section style="margin: 40px; margin-top: 100px;" >
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container ">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-11 col-lg-7 col-xl-8">
+                    <div class="card" style="border-radius: 15px;border:1px dashed rgb(192, 192, 192);">
+                        <div class="card-body p-5">
+                            <div class="row mb-4">
+                                <form [formGroup]="QuestionFom"  >
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form12">Question</label>
+                                        <input style="border:1px solid gray;" type="text" id="question"
+                                            class="form-control"  formControlName="question"/>
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col col-lg-6" *ngFor="let answer of answers.controls; let i = index" [formGroupName]="i">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="radioa">{{i+1}}</label>
+                                                    <div style="display:flex;justify-content: space-between;">
+                                                        <input class="form-check-input" type="text" name="ans" id="ans" formControlName="answer.score" />
+                                                        <input style="margin-right: 30px;" type="text" id="ans"
+                                                            class="form-control" formControlName="answer.ans"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col col-lg-6">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="radioa">A</label>
+                                                    <div style="display:flex;justify-content: space-between;">
+                                                        <input class="form-check-input" type="text" name="ans1" id="ans1" formControlName="score" />
+                                                        <input style="margin-right: 30px;" type="text" id="ans1"
+                                                            class="form-control" formControlName="ans"/>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="col col-lg-6">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="radiob">B</label>
+                                                    <div style="display:flex;justify-content: space-between;">
+                                                        <input class="form-check-input" type="text" name="ans2" id="ans2" formControlName="score" />
+                                                        <input style="margin-right: 30px;" type="text" id="ans2"
+                                                            class="form-control" formControlName="ans"/>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+
+                                            <!-- <div class="row mt-4">
+                                                <div class="col col-lg-6">
+                                                    <div class="form-outline">
+                                                        <label class="form-label" for="radioc">C</label>
+                                                        <div style="display:flex;justify-content: space-between;">
+                                                            <input class="form-check-input" type="text" name="ans3" id="ans3" formControlName="score" />
+                                                            <input style="margin-right: 30px;" type="text" id="ans3"
+                                                                class="form-control" formControlName="ans"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               
+                                                
+                                            </div> -->
+                                        </div>
+                                    </div>
+
+                                    <!-- ********************************************************************* -->
+                                    <div style="display:flex;justify-content: start;margin-top: 40px;">
+                                            <button (click)="exit(QuestionFom)" type="submit" 
+                                            style="width: 150px;height: 50px;border-radius: 25px;background-color:#aec6dcf6;border: 1px solid transparent;color: white;">Done</button>
+                                       
+                                            <button (click)="clear(QuestionFom)" type="submit" 
+                                            style="width: 150px;height: 50px;border-radius: 25px;background-color:red;border: 1px solid transparent;color: white;">Cancel</button>
+                                       
+                                            <button (click)="save(QuestionFom)" type="submit" class="btn btn-primary"
+                                            style="width: auto;height: auto;border-radius: 25px;border: 1px solid transparent;color: white;">
+                                            Save</button>
+                                    </div> 
+                                    
+<!-- ******************GPT********************* -->
+                                    <!-- <label>Question:</label>
+                                    <input formControlName="question">
+
+                                    <div formArrayName="answers">
+                                        <div *ngFor="let answer of answers.controls; let i = index" [formGroupName]="i">
+                                        <label>Answer {{i + 1}}:</label>
+                                        <input formControlName="ans">
+                                        <label>Score:</label>
+                                        <input type="number" formControlName="score">
+                                        </div>
+                                    </div>
+
+                                    <button (click)="addAnswer()">Add answer</button> -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
